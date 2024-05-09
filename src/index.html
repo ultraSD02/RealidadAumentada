@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR.js Example</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.1.8/aframe/build/aframe-ar.js"></script>
+</head>
+<body>
+  <a-scene embedded arjs="sourceType: webcam;">
+    <!-- Definir un marcador de realidad aumentada personalizado -->  
+   
+    <!-- Definir un marcador de realidad aumentada -->  
+    <a-marker preset="hiro">
+      <!-- Agregar el modelo 3D desde la URL -->
+      <a-entity id="dinosaurio" gltf-model="../3D/dinosaurio/scene.gltf" scale="0.5 0.5 0.5" rotation="0.5 90 -90" position="0 0.5 0"></a-entity>
+    </a-marker>
+
+    <a-marker preset="kanji">
+      <a-entity id="7ball" gltf-model="../3D/7balls/7ball.glb" scale="3 3 3" rotation="260 90 -90" position="0 0.5 0"></a-entity>
+    </a-marker>
+    <!-- Cámara para la realidad aumentada -->
+    <a-entity camera></a-entity>
+
+    <!-- Incluir el script al final del cuerpo del documento -->
+    <script src="js/main.js"></script>
+  </a-scene>
+</body>
+</html> 
