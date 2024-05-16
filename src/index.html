@@ -11,8 +11,14 @@
   
   <body style="margin : 0px; overflow: hidden;">
 
-    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
-      
+    <a-scene 
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+      embedded 
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
       <a-marker type="pattern" preset="custom" url="../markers/marker.patt">
         <a-entity
           id="7balls"
