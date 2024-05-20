@@ -40,7 +40,7 @@
           id="bowser-model"
           gltf-model="#bowser"
           position="0 0 0"
-          scale="0.05 0.05 0.05"
+          scale="0.02 0.02 0.02"
           class="clickable"
           gesture-handler
         >
@@ -56,24 +56,32 @@
       >
         <a-entity
           id="ojo"
-          scale="0.05 0.05 0.05"
+          scale="0.2 0.2 0.2"
           position="0 0 0"
           gltf-model="../3D/ojo/scene.gltf"
           class="clickable"
           gesture-handler
         ></a-entity>
       </a-marker>
-<!--
-      <a-marker type="pattern" preset="custom" url="../markers/marker.patt">
+
+      <a-marker 
+        type="pattern" 
+        preset="custom" 
+        url="../markers/marker.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerC"
+      >
         <a-entity
-          id="7balls"
+          id="ceramica"
           scale="1 1 1"
           rotation="90 90 -90"
           position="0 0 0"
           gltf-model="../3D/ceramica/cerámica.glb"
         ></a-entity>
       </a-marker>
--->
+
       <a-entity camera></a-entity>
     </a-scene>
   </body>
