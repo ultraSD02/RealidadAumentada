@@ -37,27 +37,33 @@
         id="markerA"
       >
         <a-entity
-          id="ojo"
-          scale="0.2 0.2 0.2"
-          rotation="0.5 90 -90"
+          id="bowser-model"
+          gltf-model="#bowser"
           position="0 0 0"
-          gltf-model="../3D/ojo/scene.gltf"
+          scale="0.05 0.05 0.05"
           class="clickable"
           gesture-handler
         >
         </a-entity>
       </a-marker>
-<!--
-      <a-marker preset="kanji">
+
+      <a-marker
+        preset="kanji"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerB"
+      >
         <a-entity
-        id="ojo"
-        scale="0.2 0.2 0.2"
-        rotation="0.5 90 -90"
-        position="0 0 0"
-        gltf-model="../3D/ojo/scene.gltf"
+          id="ojo"
+          scale="0.05 0.05 0.05"
+          position="0 0 0"
+          gltf-model="../3D/ojo/scene.gltf"
+          class="clickable"
+          gesture-handler
         ></a-entity>
       </a-marker>
-
+<!--
       <a-marker type="pattern" preset="custom" url="../markers/marker.patt">
         <a-entity
           id="7balls"
@@ -67,7 +73,7 @@
           gltf-model="../3D/ceramica/cerámica.glb"
         ></a-entity>
       </a-marker>
--->
+
       <a-entity camera></a-entity>
     </a-scene>
   </body>
