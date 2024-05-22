@@ -8,11 +8,17 @@
   <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-
+  <script src="gesture-detector.js"></script>
+  <script src="gesture-handler.js"></script>
+  <script src="butoon-video.js"></script>
+  
   <div style="position: fixed; top: 10px; width: 100%; text-align: center; z-index: 1;">
     <button class="button" id="btn1">Play Video</button>
     <button class="button" id="btn2">Stop Video</button>
+    <button class="button" id="btn3">Informacion</button>
   </div>
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <body style="margin : 0px; overflow: hidden;">
 
@@ -43,7 +49,7 @@
           id="bowser-model"
           gltf-model="#bowser"
           position="0 0 0"
-          scale="0.02 0.02 0.02"
+          scale="0.04 0.04 0.04"
           class="clickable"
           gesture-handler
         >
@@ -61,8 +67,7 @@
         webkitplaysinline
         autoplay
         controls
-        muted
-        src="../videos/ice_blue.mp4"
+        src="../videos/prog.mp4"
         ></video>
 
         <a-video
@@ -71,7 +76,7 @@
         scale="3 2 2"
         rotation="270 0 0"
         ></a-video>
-
+        
       </a-marker>
 
       <a-marker 
@@ -87,7 +92,7 @@
           id="ceramica"
           gltf-model="../3D/ceramica/ceramica.glb"
           position="0 0 0"
-          scale="0.5 0.5 0.5"
+          scale="0.4 0.4 0.4"
           class="clickable"
           gesture-handler
         ></a-entity>
@@ -97,8 +102,6 @@
     </a-scene>
   </body>
 
-  <script src="gesture-detector.js"></script>
-  <script src="gesture-handler.js"></script>
-  <script src="butoon-video.js"></script>
 
+  
 </html>

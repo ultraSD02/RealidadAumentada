@@ -1,4 +1,4 @@
-var m = document-querySelector("#markerB");
+var m = document-querySelector("a-maker");
 m.addEventListener("markerFound", (e)=>{
 var v = document.querySelector("#videoA").play();
 
