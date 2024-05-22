@@ -1,15 +1,23 @@
-var m = document-querySelector("a-maker");
-m.addEventListener("markerFound", (e)=>{
-var v = document.querySelector("#videoA").play();
+document.addEventListener("DOMContentLoaded", () => {
+const markerB = document.querySelector("#markerB");
+const video = document.querySelector("#videoA");
+const buttons = document.getElementById("buttons");
 
-})
-m.addEventListener("markerlost", (e)=>{
-var v = document.querySelector("#videoA").pause();
-})  
+markerB.addEventListener("markerFound", () => {
+buttons.style.display = "block";
+video.play();
+});
 
-document.getElementById("btn1").addEventListener("click", (e)=>{
-var v = document.querySelector("#videoA").play();
-})
-document.getElementById("btn2").addEventListener("click", (e)=>{
-var v = document.querySelector("#videoA").stop();
-})
+markerB.addEventListener("markerLost", () => {
+buttons.style.display = "none";
+video.pause();
+});
+
+document.getElementById("btn1").addEventListener("click", () => {
+video.play();
+});
+
+document.getElementById("btn2").addEventListener("click", () => {
+video.pause();
+});
+});

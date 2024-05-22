@@ -29,8 +29,16 @@
       margin: 4px 2px;
       border-radius: 15px;
     }
+    #buttons {
+      display: none; /* Ocultar los botones por defecto */
+      position: fixed;
+      top: 10px;
+      width: 100%;
+      text-align: center;
+      z-index: 1;
+    }
   </style>
-  <div style="position: fixed; top: 10px; width: 100%; text-align: center; z-index: 1;">
+  <div id="buttons">
     <button class="button" id="btn1">Play Video</button>
     <button class="button" id="btn2">Stop Video</button>
     <button class="button" id="btn3">Informacion</button>
@@ -83,7 +91,6 @@
         crossOrigin="anonymous"
         playsinline
         webkitplaysinline
-        autoplay
         controls
         src="../videos/prog.mp4"
         ></video>
@@ -119,7 +126,5 @@
       <a-entity camera></a-entity>
     </a-scene>
   </body>
-
-
   
 </html>
