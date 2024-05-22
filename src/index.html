@@ -8,9 +8,12 @@
   <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-  <script src="gesture-detector.js"></script>
-  <script src="gesture-handler.js"></script>
-  
+
+  <div style="position: fixed; top: 10px; width: 100%; text-align: center; z-index: 1;">
+    <button class="button" id="btn1">Play Video</button>
+    <button class="button" id="btn2">Stop Video</button>
+  </div>
+
   <body style="margin : 0px; overflow: hidden;">
 
     <a-scene 
@@ -18,7 +21,7 @@
       embedded 
       renderer="logarithmicDepthBuffer: true;"
       vr-mode-ui="enabled: false"
-      gesture-detector
+      gesture-detector  
       id="scene"
     >
     <a-assets>
@@ -49,19 +52,26 @@
 
       <a-marker
         preset="kanji"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
         id="markerB"
       >
-        <a-entity
-          id="ojo"
-          gltf-model="../3D/ojo/scene.gltf"
-          position="0 0 0"
-          scale="0.2 0.2 0.2"
-          class="clickable"
-          gesture-handler
-        ></a-entity>
+        <video 
+        id="videoA"
+        crossOrigin="anonymous"
+        playsinline
+        webkitplaysinline
+        autoplay
+        controls
+        muted
+        src="../videos/ice_blue.mp4"
+        ></video>
+
+        <a-video
+        src="#videoA"
+        position="0 0 0"
+        scale="3 2 2"
+        rotation="270 0 0"
+        ></a-video>
+
       </a-marker>
 
       <a-marker 
@@ -86,4 +96,9 @@
       <a-entity camera></a-entity>
     </a-scene>
   </body>
+
+  <script src="gesture-detector.js"></script>
+  <script src="gesture-handler.js"></script>
+  <script src="butoon-video.js"></script>
+
 </html>
