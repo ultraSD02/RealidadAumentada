@@ -20,4 +20,8 @@ video.play();
 document.getElementById("btn2").addEventListener("click", () => {
 video.pause();
 });
+document.getElementById("btn3").addEventListener("click", () => {
+video.currentTime = 0;
+video.play();
+});
 });
