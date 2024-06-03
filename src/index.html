@@ -11,8 +11,9 @@
   <script src="gesture-detector.js"></script>
   <script src="gesture-handler.js"></script>
   <script src="butoon-video.js"></script>
+  <script src="buttton-markers.js"></script>
   
-  <style>
+  <style> 
     .button {
       border: none;
       background-color: white ;
@@ -41,6 +42,18 @@
       text-align: center;
       z-index: 1;
     }
+    .button-container {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 10px;
+      right: -10px;
+      width: 100%;
+      text-align: center;
+      z-index: 1;
+    }
     
   </style>
   <div id="buttons">
@@ -48,6 +61,14 @@
     <button class="button" id="btn2">Stop</button>
     <button class="button" id="btn3">Restart</button>
     <button class="button" id="btn4">Informacion</button>
+  </div>
+
+  <div id="button-markA" class="button-container" data-marker-id="markerA">
+    <button class="button" id="btn-markA" data-info-url="https://youtube.com/shorts/WE0LTe3HLsM?si=Yxbm0SkQKm7qyxxq">Informacion</button>
+  </div>
+
+  <div id="button-markB" class="button-container" data-marker-id="markerB">
+    <button class="button" id="btn-markB" data-info-url="https://larueca.pe/products/juego-de-platos-pinig-ceramica-awajun-3-piezas?pr_prod_strat=collection_fallback&pr_rec_id=d7d3ebef7&pr_rec_pid=8353105445163&pr_ref_pid=8353113473323&pr_seq=uniform">Informacion</button>
   </div>
 
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -62,6 +83,10 @@
       gesture-detector  
       id="scene"
     >
+    
+<!--Marcadores imagenes 3D-->
+
+      <!--Marcador Bowser-->
     <a-assets>
       <a-asset-item
         id="bowser"
@@ -69,7 +94,7 @@
       >
       </a-asset-item>
     </a-assets>
-
+      
       <a-marker
         preset="hiro"
         raycaster="objects: .clickable"
@@ -81,6 +106,7 @@
           id="bowser-model"
           gltf-model="#bowser"
           position="0 0 0"
+          rotation="-80 0 0"
           scale="0.04 0.04 0.04"
           class="clickable"
           gesture-handler="targetMarker: markerA"
@@ -88,9 +114,31 @@
         </a-entity>
       </a-marker>
 
+      <!--Marcador Ceramica-->
+      <a-marker 
+        type="pattern" 
+        preset="custom" 
+        url="../markers/marker.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerB"
+      >
+        <a-entity
+          id="ceramica"
+          gltf-model="../3D/ceramica/ceramica.glb"
+          position="0 0 0"
+          rotation="-80 0 0"
+          scale="0.4 0.4 0.4"
+          class="clickable"
+          gesture-handler="targetMarker: markerB"
+        ></a-entity>
+      </a-marker>
+
+<!--Marcadores videos-->
       <a-marker
         preset="kanji"
-        id="markerB"
+        id="marker-videoA"
       >
         <video 
         id="videoA"
@@ -107,26 +155,6 @@
         scale="3 2 2"
         rotation="270 0 0"
         ></a-video>
-        
-      </a-marker>
-
-      <a-marker 
-        type="pattern" 
-        preset="custom" 
-        url="../markers/marker.patt"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        id="markerC"
-      >
-        <a-entity
-          id="ceramica"
-          gltf-model="../3D/ceramica/ceramica.glb"
-          position="0 0 0"
-          scale="0.4 0.4 0.4"
-          class="clickable"
-          gesture-handler="targetMarker: markerC"
-        ></a-entity>
       </a-marker>
 
       <a-entity camera></a-entity>
