@@ -52,7 +52,7 @@ AFRAME.registerComponent("gesture-detector", {
         currentState.startSpread = currentState.spread;
   
         const eventName =
-        this.getEventPrefix(currentState.touchCount) + "fingerstart";
+          this.getEventPrefix(currentState.touchCount) + "fingerstart";
         this.el.emit(eventName, currentState);
         this.internalState.previousState = currentState;
       }
