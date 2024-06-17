@@ -7,6 +7,7 @@
   <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
   <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
   <script src="gesture-detector.js"></script>
   <script src="gesture-handler.js"></script>
@@ -15,6 +16,8 @@
   
   <style> 
     .button {
+      height: 80px;
+      width: 180px;
       border: none;
       background-color: white ;
       color: black;
@@ -71,12 +74,44 @@
     <button class="button" id="btn-markB" data-info-url="https://larueca.pe/products/juego-de-platos-pinig-ceramica-awajun-3-piezas?pr_prod_strat=collection_fallback&pr_rec_id=d7d3ebef7&pr_rec_pid=8353105445163&pr_ref_pid=8353113473323&pr_seq=uniform">Informacion</button>
   </div>
 
+  <div id="button-markC" class="button-container" data-marker-id="markerC">
+    <button class="button" id="btn-markC" data-info-url="">Informacion</button>
+  </div>
+
+  <div id="button-markD" class="button-container" data-marker-id="markerD">
+    <button class="button" id="btn-markD" data-info-url="">Informacion</button>
+  </div>
+
+  <div id="button-markE" class="button-container" data-marker-id="markerE">
+    <button class="button" id="btn-markE" data-info-url="">Informacion</button>
+  </div>
+
+  <div id="button-markF" class="button-container" data-marker-id="markerF">
+    <button class="button" id="btn-markF" data-info-url="">Informacion</button>
+  </div>
+
+  <div id="button-markG" class="button-container" data-marker-id="markerG">
+    <button class="button" id="btn-markG" data-info-url="">Informacion</button>
+  </div>
+
+  <div id="button-markH" class="button-container" data-marker-id="markerH">
+    <button class="button" id="btn-markH" data-info-url="">Informacion</button>
+  </div>
+
+  <div id="button-markI" class="button-container" data-marker-id="markerI">
+    <button class="button" id="btn-markI" data-info-url="">Informacion</button>
+  </div>
+
+  <div id="button-markJ" class="button-container" data-marker-id="markerJ">
+    <button class="button" id="btn-markJ" data-info-url="">Informacion</button>
+  </div>
+
   <meta name="apple-mobile-web-app-capable" content="yes">
 
   <body style="margin : 0px; overflow: hidden;">
 
     <a-scene 
-      arjs
+      arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'
       embedded 
       renderer="logarithmicDepthBuffer: true;"
       vr-mode-ui="enabled: false"
@@ -86,7 +121,7 @@
     
 <!--Marcadores imagenes 3D-->
 
-      <!--Marcador Bowser-->
+    <!--Marcador Bowser-->
     <a-assets>
       <a-asset-item
         id="bowser"
@@ -113,11 +148,30 @@
         </a-entity>
       </a-marker>
 
-      <!--Marcador Ceramica-->
+<!--MarcadorA Ceramica Awajun-->
+      <a-marker 
+        type="pattern" 
+        preset="custom"
+        url="../markers/markerAwajun.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerA"
+      >
+        <a-entity
+          id="ceramica-awajun"
+          gltf-model="../3D/img/Ceramica-Awajun.glb"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler="targetMarker: markerA"
+        ></a-entity>
+      </a-marker>
+<!--MarcadorB ceramina Huancas-->
       <a-marker 
         type="pattern" 
         preset="custom" 
-        url="../markers/marker.patt"
+        url="../markers/markerHuancas.patt"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
@@ -125,11 +179,171 @@
       >
         <a-entity
           id="ceramica"
-          gltf-model="../3D/ceramica/ceramica.glb"
+          gltf-model="../3D/img/Ceramica-Huancas.glb"
           position="0 0 0"
-          scale="0.4 0.4 0.4"
+          scale="1 1 1"
           class="clickable"
           gesture-handler="targetMarker: markerB"
+        ></a-entity>
+      </a-marker>
+
+<!--MarcadorC Bisuteria A-->
+      <a-marker 
+        type="pattern" 
+        preset="custom" 
+        url="../markers/markerBisuteriaA.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerC"
+      >
+        <a-entity
+          id="ceramica"
+          gltf-model="../3D/img/BisuteriaA.glb" 
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler="targetMarker: markerC"
+        ></a-entity>
+      </a-marker>
+
+<!--MarcadorD Bisuteria B-->
+      <a-marker 
+        type="pattern" 
+        preset="custom" 
+        url="../markers/markerBisuteriaB.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerD"
+      >
+        <a-entity
+          id="ceramica"
+          gltf-model="../3D/img/BisuteriaB.glb"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler="targetMarker: markerD"
+        ></a-entity>
+      </a-marker>
+
+<!--MarcadorE Textil A-->
+      <a-marker 
+        type="pattern" 
+        preset="custom" 
+        url="../markers/markerTextilA.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerE"
+      >
+        <a-entity
+          id="ceramica"
+          gltf-model="../3D/img/TextilA.glb"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler="targetMarker: markerE"
+        ></a-entity>
+      </a-marker>
+
+<!--MarcadorF Textil B-->
+      <a-marker 
+        type="pattern" 
+        preset="custom" 
+        url="../markers/markerTextilB.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerF"
+      >
+        <a-entity
+          id="ceramica"
+          gltf-model="../3D/img/TextilB.glb"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler="targetMarker: markerF"
+        ></a-entity>
+      </a-marker>
+
+<!--MarcadorG Madera A-->
+      <a-marker 
+        type="pattern" 
+        preset="custom" 
+        url="../markers/markerMaderaA.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerG"
+      >
+        <a-entity
+          id="ceramica"
+          gltf-model="../3D/img/MaderaA.glb"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler="targetMarker: markerG"
+        ></a-entity>
+      </a-marker>
+
+<!--MarcadorH Madera B-->
+      <a-marker 
+        type="pattern" 
+        preset="custom" 
+        url="../markers/markerMaderaB.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerH"
+      >
+        <a-entity
+          id="ceramica"
+          gltf-model="../3D/img/MaderaB.glb"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler="targetMarker: markerH"
+        ></a-entity>
+      </a-marker>
+
+<!--MarcadorI Fibra Vegetal A-->
+      <a-marker 
+        type="pattern" 
+        preset="custom" 
+        url="../markers/markerVegetalA.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerI"
+      >
+        <a-entity
+          id="ceramica"
+          gltf-model="../3D/img/Fibra-VegetalA.glb"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler="targetMarker: markerI"
+        ></a-entity>
+      </a-marker>
+
+<!--MarcadorJ Fibra Vegetal B-->
+      <a-marker 
+        type="pattern" 
+        preset="custom" 
+        url="../markers/markerVegetalB.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerJ"
+      >
+        <a-entity
+          id="ceramica"
+          gltf-model="../3D/img/Fibra-VegetalB.glb"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler="targetMarker: markerJ"
         ></a-entity>
       </a-marker>
 
