@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <title>AR.js Example</title>
-</head>
+<html lang="es">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <link rel="manifest" href="manifest.json" />
+    <title>AR.js Example</title>
+  </head>
+
   <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -13,13 +18,13 @@
   <script src="gesture-handler.js"></script>
   <script src="butoon-video.js"></script>
   <script src="buttton-markers.js"></script>
-  
-  <style> 
+
+  <style>
     .button {
       height: 100px;
       width: 200px;
       border: none;
-      background-color: white ;
+      background-color: white;
       color: black;
       padding: 7px;
       align-items: center;
@@ -57,71 +62,140 @@
       text-align: center;
       z-index: 1;
     }
-    
   </style>
   <div id="buttons">
-    <button class="button" id="btn1" style="font-size: 35px;">Play</button>
-    <button class="button" id="btn2" style="font-size: 35px;">Stop</button>
-    <button class="button" id="btn3" style="font-size: 35px;">Restart</button>
-    <button class="button" id="btn4" style="font-size: 35px;">Informacion</button>
+    <button class="button" id="btn1" style="font-size: 35px">Play</button>
+    <button class="button" id="btn2" style="font-size: 35px">Stop</button>
+    <button class="button" id="btn3" style="font-size: 35px">Restart</button>
+    <button class="button" id="btn4" style="font-size: 35px">
+      Informacion
+    </button>
   </div>
 
   <div id="button-markA" class="button-container" data-marker-id="markerA">
-    <button class="button" id="btn-markA" data-info-url="https://youtube.com/shorts/WE0LTe3HLsM?si=Yxbm0SkQKm7qyxxq" style="font-size: 35px;">Informacion</button>
+    <button
+      class="button"
+      id="btn-markA"
+      data-info-url="https://youtube.com/shorts/WE0LTe3HLsM?si=Yxbm0SkQKm7qyxxq"
+      style="font-size: 35px"
+    >
+      Informacion
+    </button>
   </div>
 
   <div id="button-markB" class="button-container" data-marker-id="markerB">
-    <button class="button" id="btn-markB" data-info-url="https://larueca.pe/products/juego-de-platos-pinig-ceramica-awajun-3-piezas?pr_prod_strat=collection_fallback&pr_rec_id=d7d3ebef7&pr_rec_pid=8353105445163&pr_ref_pid=8353113473323&pr_seq=uniform" style="font-size: 35px;">Informacion</button>
+    <button
+      class="button"
+      id="btn-markB"
+      data-info-url="https://larueca.pe/products/juego-de-platos-pinig-ceramica-awajun-3-piezas?pr_prod_strat=collection_fallback&pr_rec_id=d7d3ebef7&pr_rec_pid=8353105445163&pr_ref_pid=8353113473323&pr_seq=uniform"
+      style="font-size: 35px"
+    >
+      Informacion
+    </button>
   </div>
 
   <div id="button-markC" class="button-container" data-marker-id="markerC">
-    <button class="button" id="btn-markC" data-info-url="" style="font-size: 35px;">Informacion</button>
+    <button
+      class="button"
+      id="btn-markC"
+      data-info-url=""
+      style="font-size: 35px"
+    >
+      Informacion
+    </button>
   </div>
 
   <div id="button-markD" class="button-container" data-marker-id="markerD">
-    <button class="button" id="btn-markD" data-info-url="" style="font-size: 35px;">Informacion</button>
+    <button
+      class="button"
+      id="btn-markD"
+      data-info-url=""
+      style="font-size: 35px"
+    >
+      Informacion
+    </button>
   </div>
 
   <div id="button-markE" class="button-container" data-marker-id="markerE">
-    <button class="button" id="btn-markE" data-info-url="" style="font-size: 35px;">Informacion</button>
+    <button
+      class="button"
+      id="btn-markE"
+      data-info-url=""
+      style="font-size: 35px"
+    >
+      Informacion
+    </button>
   </div>
 
   <div id="button-markF" class="button-container" data-marker-id="markerF">
-    <button class="button" id="btn-markF" data-info-url="" style="font-size: 35px;">Informacion</button>
+    <button
+      class="button"
+      id="btn-markF"
+      data-info-url=""
+      style="font-size: 35px"
+    >
+      Informacion
+    </button>
   </div>
 
   <div id="button-markG" class="button-container" data-marker-id="markerG">
-    <button class="button" id="btn-markG" data-info-url="" style="font-size: 35px;">Informacion</button>
+    <button
+      class="button"
+      id="btn-markG"
+      data-info-url=""
+      style="font-size: 35px"
+    >
+      Informacion
+    </button>
   </div>
 
   <div id="button-markH" class="button-container" data-marker-id="markerH">
-    <button class="button" id="btn-markH" data-info-url="" style="font-size: 35px;">Informacion</button>
+    <button
+      class="button"
+      id="btn-markH"
+      data-info-url=""
+      style="font-size: 35px"
+    >
+      Informacion
+    </button>
   </div>
 
   <div id="button-markI" class="button-container" data-marker-id="markerI">
-    <button class="button" id="btn-markI" data-info-url="" style="font-size: 35px;">Informacion</button>
+    <button
+      class="button"
+      id="btn-markI"
+      data-info-url=""
+      style="font-size: 35px"
+    >
+      Informacion
+    </button>
   </div>
 
   <div id="button-markJ" class="button-container" data-marker-id="markerJ">
-    <button class="button" id="btn-markJ" data-info-url="" style="font-size: 35px;">Informacion</button>
+    <button
+      class="button"
+      id="btn-markJ"
+      data-info-url=""
+      style="font-size: 35px"
+    >
+      Informacion
+    </button>
   </div>
 
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
 
-  <body style="margin : 0px; overflow: hidden;">
-
-    <a-scene 
-      arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'
-      embedded 
+  <body style="margin: 0px; overflow: hidden">
+    <a-scene
+      arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+      embedded
       renderer="logarithmicDepthBuffer: true;"
       vr-mode-ui="enabled: false"
-      gesture-detector  
+      gesture-detector
       id="scene"
     >
-    
-<!--Marcadores imagenes 3D-->
+      <!--Marcadores imagenes 3D-->
 
-    <!--Marcador Bowser
+      <!--Marcador Bowser
     <a-assets>
       <a-asset-item
         id="bowser"
@@ -148,9 +222,9 @@
         </a-entity>
       </a-marker>
 -->
-<!--MarcadorA Ceramica Awajun-->
-      <a-marker 
-        type="pattern" 
+      <!--MarcadorA Ceramica Awajun-->
+      <a-marker
+        type="pattern"
         preset="custom"
         url="../markers/markerAwajun.patt"
         raycaster="objects: .clickable"
@@ -167,10 +241,10 @@
           gesture-handler="targetMarker: markerA"
         ></a-entity>
       </a-marker>
-<!--MarcadorB ceramina Huancas-->
-      <a-marker 
-        type="pattern" 
-        preset="custom" 
+      <!--MarcadorB ceramina Huancas-->
+      <a-marker
+        type="pattern"
+        preset="custom"
         url="../markers/markerHuancas.patt"
         raycaster="objects: .clickable"
         emitevents="true"
@@ -187,10 +261,10 @@
         ></a-entity>
       </a-marker>
 
-<!--MarcadorC Bisuteria A-->
-      <a-marker 
-        type="pattern" 
-        preset="custom" 
+      <!--MarcadorC Bisuteria A-->
+      <a-marker
+        type="pattern"
+        preset="custom"
         url="../markers/markerBisuteriaA.patt"
         raycaster="objects: .clickable"
         emitevents="true"
@@ -199,7 +273,7 @@
       >
         <a-entity
           id="ceramica"
-          gltf-model="../3D/img/BisuteriaA.glb" 
+          gltf-model="../3D/img/BisuteriaA.glb"
           position="0 0 0"
           scale="1 1 1"
           class="clickable"
@@ -207,10 +281,10 @@
         ></a-entity>
       </a-marker>
 
-<!--MarcadorD Bisuteria B-->
-      <a-marker 
-        type="pattern" 
-        preset="custom" 
+      <!--MarcadorD Bisuteria B-->
+      <a-marker
+        type="pattern"
+        preset="custom"
         url="../markers/markerBisuteriaB.patt"
         raycaster="objects: .clickable"
         emitevents="true"
@@ -227,10 +301,10 @@
         ></a-entity>
       </a-marker>
 
-<!--MarcadorE Textil A-->
-      <a-marker 
-        type="pattern" 
-        preset="custom" 
+      <!--MarcadorE Textil A-->
+      <a-marker
+        type="pattern"
+        preset="custom"
         url="../markers/markerTextilA.patt"
         raycaster="objects: .clickable"
         emitevents="true"
@@ -247,10 +321,10 @@
         ></a-entity>
       </a-marker>
 
-<!--MarcadorF Textil B-->
-      <a-marker 
-        type="pattern" 
-        preset="custom" 
+      <!--MarcadorF Textil B-->
+      <a-marker
+        type="pattern"
+        preset="custom"
         url="../markers/markerTextilB.patt"
         raycaster="objects: .clickable"
         emitevents="true"
@@ -267,10 +341,10 @@
         ></a-entity>
       </a-marker>
 
-<!--MarcadorG Madera A-->
-      <a-marker 
-        type="pattern" 
-        preset="custom" 
+      <!--MarcadorG Madera A-->
+      <a-marker
+        type="pattern"
+        preset="custom"
         url="../markers/markerMaderaA.patt"
         raycaster="objects: .clickable"
         emitevents="true"
@@ -287,10 +361,10 @@
         ></a-entity>
       </a-marker>
 
-<!--MarcadorH Madera B-->
-      <a-marker 
-        type="pattern" 
-        preset="custom" 
+      <!--MarcadorH Madera B-->
+      <a-marker
+        type="pattern"
+        preset="custom"
         url="../markers/markerMaderaB.patt"
         raycaster="objects: .clickable"
         emitevents="true"
@@ -307,10 +381,10 @@
         ></a-entity>
       </a-marker>
 
-<!--MarcadorI Fibra Vegetal A-->
-      <a-marker 
-        type="pattern" 
-        preset="custom" 
+      <!--MarcadorI Fibra Vegetal A-->
+      <a-marker
+        type="pattern"
+        preset="custom"
         url="../markers/markerVegetalA.patt"
         raycaster="objects: .clickable"
         emitevents="true"
@@ -327,10 +401,10 @@
         ></a-entity>
       </a-marker>
 
-<!--MarcadorJ Fibra Vegetal B-->
-      <a-marker 
-        type="pattern" 
-        preset="custom" 
+      <!--MarcadorJ Fibra Vegetal B-->
+      <a-marker
+        type="pattern"
+        preset="custom"
         url="../markers/markerVegetalB.patt"
         raycaster="objects: .clickable"
         emitevents="true"
@@ -347,30 +421,26 @@
         ></a-entity>
       </a-marker>
 
-<!--Marcadores videos-->
-      <a-marker
-        preset="kanji"
-        id="marker-videoA"
-      >
-        <video 
-        id="videoA"
-        crossOrigin="anonymous"
-        playsinline
-        webkitplaysinline
-        controls
-        src="../videos/prog.mp4"
+      <!--Marcadores videos-->
+      <a-marker preset="kanji" id="marker-videoA">
+        <video
+          id="videoA"
+          crossorigin="anonymous"
+          playsinline
+          webkitplaysinline
+          controls
+          src="../videos/prog.mp4"
         ></video>
 
         <a-video
-        src="#videoA"
-        position="0 0 0"
-        scale="3 2 2"
-        rotation="270 0 0"
+          src="#videoA"
+          position="0 0 0"
+          scale="3 2 2"
+          rotation="270 0 0"
         ></a-video>
       </a-marker>
 
       <a-entity camera></a-entity>
     </a-scene>
   </body>
-  
 </html>
